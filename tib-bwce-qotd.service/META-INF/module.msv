@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msv:DocumentRoot xmlns:msv="http://tns.tibco.com/bw/model/core/moduleSV">
+  <moduleSharedVariables>
+    <moduleSharedVariable name="quotes" type="{http://www.example.org/InternalSchema}quotes" initialValueMode="textfile" initialValue="Schemas/quotes.xml"/>
+  </moduleSharedVariables>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://ns.tibco.com/bw/palette/dataformat/1927d572-7855-4f8c-ae17-e7f52ecea133" location="../Schemas/QuoteDataFormatSchema.xsd"/>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/InternalSchema" location="../Schemas/InternalSchema.xsd"/>
+</msv:DocumentRoot>

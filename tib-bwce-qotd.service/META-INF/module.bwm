@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_MsnWUPFWEeiCDLrEWGiIKA" targetNamespace="http://tns.tibco.com/bw/composite/tib-bwce-qotd.service" name="tib-bwce-qotd.service" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_vjQ2APFfEeiCDLrEWGiIKA" name="quote" promote="ComponentQuote/quote">
+    <sca:interface.wsdl xmi:id="_vjVHcPFfEeiCDLrEWGiIKA" interface="http://xmlns.example.com/20181126104334PLT#wsdl.interface(quote)" scaext:wsdlLocation="../Processes/quoteoftheday/module/Quote.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_vjxMUPFfEeiCDLrEWGiIKA" name="RestService" path="/quote" docBasePath="http://localhost:7777/tib-bwce-qotd.service" docResourcePath="Quote" basePath="/" connector="quoteoftheday.module.Quote" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/quoteoftheday.module.Quote-Quote.json">
+      <operation xmi:id="_vjzokPFfEeiCDLrEWGiIKA" operationName="get" nickname="get-quote" httpMethod="GET" responseStyle="element" requestStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_vkOfUPFfEeiCDLrEWGiIKA"/>
+      <advancedConfig xmi:id="_vjxMUfFfEeiCDLrEWGiIKA" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_vjzokfFfEeiCDLrEWGiIKA" bindingName="RestService"/>
+  </sca:service>
+  <sca:property xmi:id="_NZfqcPFWEeiCDLrEWGiIKA" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_NaDrIPFWEeiCDLrEWGiIKA" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_NamdsPFWEeiCDLrEWGiIKA" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_NbX5wPFWEeiCDLrEWGiIKA" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_NcFEYPFWEeiCDLrEWGiIKA" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_NcpFEPFWEeiCDLrEWGiIKA" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
+  <sca:property xmi:id="_NdMesPFWEeiCDLrEWGiIKA" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_S9d5MEK_Eem3mIqATK2lIQ" name="HOST.NAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ilqtQPFWEeiCDLrEWGiIKA" name="/qotd/qotdFilename" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_hGj1gPFXEeiCDLrEWGiIKA" name="ComponentActivator" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_hGj1gfFXEeiCDLrEWGiIKA" processName="quoteoftheday.module.Activator"/>
+  </sca:component>
+  <sca:component xmi:id="_vi8s8PFfEeiCDLrEWGiIKA" name="ComponentQuote" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_vi8s8fFfEeiCDLrEWGiIKA" processName="quoteoftheday.module.Quote"/>
+    <sca:service xmi:id="_vjMkkPFfEeiCDLrEWGiIKA" name="quote">
+      <sca:interface.wsdl xmi:id="_vjNLoPFfEeiCDLrEWGiIKA" interface="http://xmlns.example.com/20181126104334PLT#wsdl.interface(quote)" scaext:wsdlLocation="../Processes/quoteoftheday/module/Quote.bwp"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

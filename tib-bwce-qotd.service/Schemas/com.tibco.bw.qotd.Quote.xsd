@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="www.tibco.com/plugin/java/xmlSchema/com.tibco.bw.qotd.Quote" xmlns:tns="www.tibco.com/plugin/java/xmlSchema/com.tibco.bw.qotd.Quote" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Quote" type="tns:QuoteType"/>
+
+  <xs:complexType name="QuoteType">
+    <xs:sequence>
+      <xs:element name="author" type="xs:string" minOccurs="0"/>
+      <xs:element name="quote" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

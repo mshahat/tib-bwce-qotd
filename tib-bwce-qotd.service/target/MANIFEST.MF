@@ -1,0 +1,23 @@
+Manifest-Version: 1.0.0.201903110233
+Bundle-SymbolicName: tib-bwce-qotd.service
+Bundle-ManifestVersion: 2
+TIBCO-BW-Edition: bwcf
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: TIBCO Software Inc.
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",com.tib
+ co.bw.palette; filter:="(name=bw.generalactivities)",com.tibco.bw.pal
+ ette; filter:="(name=bw.java)",com.tibco.bw.sharedresource.model; fil
+ ter:="(name=bw.dataformat)",com.tibco.bw.sharedresource.model; filter
+ :="(name=bw.httpconnector)",com.tibco.bw.sharedresource.model; filter
+ :="(name=bw.java)",com.tibco.bw.binding.model; filter:="(name=bw.rest
+ )"
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-Version: 2.4.1 V6 2018-10-03
+Export-Package: com.tibco.bw.qotd
+Bundle-Name: tib-bwce-qotd-service
+Bundle-Version: 1.0.0.201903110233
+Bundle-ClassPath: .,.annoxfiles/
+TIBCO-BW-ApplicationModule: META-INF/module.bwm
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+

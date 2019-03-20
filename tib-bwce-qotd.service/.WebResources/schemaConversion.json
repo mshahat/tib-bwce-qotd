@@ -1,0 +1,5 @@
+{"records": [{
+    "jsonSchemaLocation": "/tib-bwce-qotd.service/Service Descriptors/quoteoftheday.module.Quote-Quote.json",
+    "conversionType": "linked",
+    "xsdSchemaTargetNamespace": "http://tns.tibco.com/bw/json/1543228981208"
+}]}

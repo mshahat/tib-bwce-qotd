@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/InternalSchema" xmlns:tns="http://www.example.org/InternalSchema" elementFormDefault="qualified">
+
+	<element name="quotes" type="tns:t_quotes"/>
+
+	<complexType  name="t_quotes">
+		<sequence>
+			<element ref="tns:quote" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+	
+	<element name="quote" type="tns:t_quote"/>
+
+	<complexType name="t_quote">
+		<sequence>
+			<element name="author" type="string"/>
+			<element name="quote" type="string"/>
+		</sequence>
+	</complexType>
+	
+
+  
+  
+</schema>

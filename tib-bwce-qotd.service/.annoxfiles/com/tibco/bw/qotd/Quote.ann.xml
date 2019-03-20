@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<annox:class xmlns:annox="http://annox.dev.java.net" xmlns:jaxb="http://annox.dev.java.net/javax.xml.bind.annotation" name="Quote">
+  <jaxb:XmlAccessorType value="NONE"/>
+  <jaxb:XmlType name="QuoteType" propOrder="author quote "/>
+  <jaxb:XmlRootElement name="Quote" namespace="www.tibco.com/plugin/java/xmlSchema/com.tibco.bw.qotd.Quote"/>
+  <annox:field name="author">
+    <jaxb:XmlElement name="author" namespace="www.tibco.com/plugin/java/xmlSchema/com.tibco.bw.qotd.Quote"/>
+  </annox:field>
+  <annox:field name="quote">
+    <jaxb:XmlElement name="quote" namespace="www.tibco.com/plugin/java/xmlSchema/com.tibco.bw.qotd.Quote"/>
+  </annox:field>
+</annox:class>
