@@ -10,7 +10,8 @@ No external dependencies
 ![sample2](diagrams/Screenshot%202019-03-21%20at%2022.14.12.png)
 
 
-For those interested
-*zsh
-*oh-my-zsh
-*kube_ps1
+For those interested, toolkit appearing in the diagrams
+* httpie
+* zsh
+* oh-my-zsh
+* kube_ps1
