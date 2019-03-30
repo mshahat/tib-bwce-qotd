@@ -1,7 +1,8 @@
 # tib-bwce-qotd
 Quote of the day Demo service for TIBCO BWCE
 
-credits go to mark musset for initial version of the app
+credits go to mark musset for initial version of the app.
+
 Good demo to use for new clusters healthcheck as well as overall testing of ingresses, registry and connectivity.
 No external dependencies
 
