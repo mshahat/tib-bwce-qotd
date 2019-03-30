@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: openunivreg.azurecr.io/tib-bwce-qotd
-  tag: "20181204.4"
+  repository: mshahat/tib-bwce-qotd
+  tag: "20190311.1"
   pullPolicy: IfNotPresent
   pullSecrets: regcred
 
