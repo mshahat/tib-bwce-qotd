@@ -6,6 +6,8 @@ credits go to mark musset for initial version of the app.
 Good demo to use for new clusters healthcheck as well as overall testing of ingresses, registry and connectivity.
 No external dependencies
 
+Does include a Helm chart for deployment to a Kubernetes cluster. You will need to review the chart, primarily, the ingress details depending on your cluster
+
 ![sample1](diagrams/Screenshot%202019-03-21%20at%2022.14.01.png)
 
 ![sample2](diagrams/Screenshot%202019-03-21%20at%2022.14.12.png)
