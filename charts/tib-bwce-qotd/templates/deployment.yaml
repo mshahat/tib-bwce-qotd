@@ -1,0 +1,42 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: {{ include "tib-bwce-qotd.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "tib-bwce-qotd.name" . }}
+    helm.sh/chart: {{ include "tib-bwce-qotd.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    hystrix.enabled: "true"
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "tib-bwce-qotd.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "tib-bwce-qotd.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        hystrix.enabled: "true"
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env: 
+          - name: BW_JAVA_OPTS
+            value: "-Dbw.engine.opentracing.enable=true"
+          - name: JAEGER_SAMPLER_MANAGER_HOST_PORT
+            value: "jaeger-agent.kube-tib-openuniv-org:5778"
+          - name: JAEGER_ENDPOINT
+            value: "http://jaeger-collector.kube-tib-openuniv-org:14268/api/traces"
+          - name: BW_APP_MONITORING_CONFIG
+            value: '{"url":"http://bwce-monitor.kube-tib-openuniv-org:8080"}'
+          imagePullSecrets:
+            - name: {{ .Values.image.pullSecrets }}
+          ports:
+            - name: http-8080
+              containerPort: 8080
+              protocol: TCP

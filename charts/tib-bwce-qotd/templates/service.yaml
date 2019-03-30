@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "tib-bwce-qotd.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "tib-bwce-qotd.name" . }}
+    helm.sh/chart: {{ include "tib-bwce-qotd.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+  annotations:
+    apiscout/index: 'true'
+    apiscout/swaggerUrl: /swagger/swagger.json    
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 8080
+      protocol: TCP
+      name: http-8080
+  selector:
+    app.kubernetes.io/name: {{ include "tib-bwce-qotd.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
